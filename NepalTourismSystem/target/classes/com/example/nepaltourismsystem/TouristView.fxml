@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.nepaltourismsystem.controller.TouristController"
+            prefWidth="900" prefHeight="600">
+
+    <!-- Top title -->
+    <top>
+        <Label text="Manage Tourists"
+               style="-fx-font-size: 24px; -fx-text-fill: #d84315; -fx-padding: 15;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- Center content -->
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Table -->
+            <TableView fx:id="touristTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+                    <TableColumn fx:id="nationalityColumn" text="Nationality" prefWidth="150"/>
+                    <TableColumn fx:id="contactColumn" text="Contact" prefWidth="150"/>
+                    <TableColumn fx:id="emergencyContactColumn" text="Emergency Contact" prefWidth="180"/>
+                </columns>
+            </TableView>
+
+            <!-- Form inputs -->
+            <GridPane hgap="15" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT"/>
+                    <ColumnConstraints prefWidth="200"/>
+                </columnConstraints>
+
+                <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Nationality:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="nationalityField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Contact:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="contactField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Emergency Contact:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="emergencyContactField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <!-- Buttons -->
+            <HBox spacing="15" alignment="CENTER">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Button fx:id="addButton" text="Add" styleClass="menu-button"/>
+                <Button fx:id="updateButton" text="Update" styleClass="menu-button"/>
+                <Button fx:id="deleteButton" text="Delete" styleClass="menu-button"/>
+                <Button fx:id="clearButton" text="Clear" styleClass="menu-button"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
