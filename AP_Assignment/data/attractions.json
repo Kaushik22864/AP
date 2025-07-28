@@ -1,0 +1,6 @@
+[
+  {"name":"Poon Hill", "type":"Viewpoint", "location":"Myagdi", "description":"A popular sunrise viewpoint offering panoramic views of the Annapurna and Dhaulagiri mountain ranges.", "altitude":0.00},
+  {"name":"Pashupatinath Temple", "type":"Religious Site", "location":"Kathmandu", "description":"One of the holiest Hindu Sites dedicated to Lord Shiva in the world", "altitude":0.00},
+  {"name":"Rara Lake", "type":"Lake", "location":"Mugu", "description":"Nepal’s largest lake", "altitude":0.00},
+  {"name":"Mt. Everest", "type":"Mountain", "location":"Solukhumbu", "description":"Tallest Mountain in the world", "altitude":8848.00}
+]
