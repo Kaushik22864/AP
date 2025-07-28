@@ -1,6 +1,0 @@
-[
-  {"tourist":"Aarin", "guide":"Yujaw", "attraction":"Rara Lake", "date":"2025-07-31", "endDate":"2025-08-02", "status":"Pending", "cost":20000.00},
-  {"tourist":"Aarin", "guide":"Nitesh", "attraction":"Pashupatinath Temple", "date":"2025-08-04", "endDate":"2025-08-06", "status":"Pending", "cost":15000.00},
-  {"tourist":"Hrishant", "guide":"Mohit", "attraction":"Rara Lake", "date":"2025-07-29", "endDate":"2025-07-30", "status":"Pending", "cost":10000.00},
-  {"tourist":"Kaushik", "guide":"Yujaw", "attraction":"Mt. Everest", "date":"2025-08-07", "endDate":"2025-08-09", "status":"Pending", "cost":30000.00}
-]
