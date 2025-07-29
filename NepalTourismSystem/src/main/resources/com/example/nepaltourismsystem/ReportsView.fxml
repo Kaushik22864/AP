@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import java.lang.String?>
+<BorderPane prefHeight="600" prefWidth="900" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.nepaltourismsystem.controller.ReportsController">
+
+    <!-- Top Header -->
+    <top>
+        <Label style="-fx-font-size: 26px; -fx-text-fill: #1e88e5; -fx-padding: 20;" text="Reports and Analytics" BorderPane.alignment="CENTER" />
+    </top>
+
+    <!-- Center -->
+    <center>
+        <VBox fx:id="rootContainer" xmlns:fx="http://javafx.com/fxml" spacing="20">
+            <padding>
+                <Insets bottom="20" left="30" right="30" top="10" />
+            </padding>
+            <ComboBox fx:id="langBox" promptText="Select a language">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="English"/>
+                        <String fx:value="Nepali"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <!-- Stats Grid -->
+            <GridPane hgap="25" vgap="15">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="25" />
+                    <ColumnConstraints percentWidth="25" />
+                    <ColumnConstraints percentWidth="25" />
+                    <ColumnConstraints percentWidth="25" />
+                </columnConstraints>
+
+                <Label fx:id="totalTouristsLabel" style="-fx-font-size: 16px; -fx-background-color: #4fc3f7; -fx-text-fill: white; -fx-padding: 15; -fx-background-radius: 10;" text="Total Tourists: 0" GridPane.columnIndex="0" />
+                <Label fx:id="totalGuidesLabel" style="-fx-font-size: 16px; -fx-background-color: #81c784; -fx-text-fill: white; -fx-padding: 15; -fx-background-radius: 10;" text="Total Guides: 0" GridPane.columnIndex="1" />
+                <Label fx:id="totalAttractionsLabel" style="-fx-font-size: 16px; -fx-background-color: #ffb74d; -fx-text-fill: white; -fx-padding: 15; -fx-background-radius: 10;" text="Total Attractions: 0" GridPane.columnIndex="2" />
+                <Label fx:id="totalBookingsLabel" style="-fx-font-size: 16px; -fx-background-color: #ba68c8; -fx-text-fill: white; -fx-padding: 15; -fx-background-radius: 10;" text="Total Bookings: 0" GridPane.columnIndex="3" />
+                <rowConstraints>
+                    <RowConstraints />
+                </rowConstraints>
+            </GridPane>
+            <!-- Pie Chart -->
+            <VBox  alignment="CENTER" spacing="10">
+                <Label fx:id="bookingDistributionByAttraction" style="-fx-font-size: 18px; -fx-text-fill: #333;" text="Booking Distribution by Attraction" />
+                <PieChart fx:id="bookingPieChart" prefHeight="600" prefWidth="1000"/>
+            </VBox>
+
+            <!-- Bar Chart -->
+            <VBox alignment="CENTER" spacing="10">
+                <Label fx:id="bookingsPerGuide" style="-fx-font-size: 18px; -fx-text-fill: #333;" text="Bookings per Guide" />
+                <BarChart fx:id="guideBookingBarChart" prefWidth="600" prefHeight="300">
+                    <xAxis>
+                        <CategoryAxis label="Guide Name"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Number of Bookings"/>
+                    </yAxis>
+                </BarChart>
+            </VBox>
+            <!-- Menu Button -->
+            <Button fx:id="menuButton" onAction="#returnMain" styleClass="return-menu-button" mnemonicParsing="false" text="Menu" />
+            <Button fx:id="exportPdfButton" text="Export to PDF" styleClass="menu-button"/>
+        </VBox>
+    </center>
+
+</BorderPane>

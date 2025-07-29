@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nepaltourismsystem.controller.TouristController">
+
+    <!-- Top title -->
+    <top>
+        <Label style="-fx-font-size: 24px; -fx-text-fill: #d84315; -fx-padding: 15;" text="Manage Tourists" BorderPane.alignment="CENTER" />
+    </top>
+
+    <!-- Center content -->
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <ComboBox fx:id="langBox" promptText="Select a language">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="English"/>
+                        <String fx:value="Nepali"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <!-- Table -->
+            <TableView fx:id="touristTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="nameColumn" prefWidth="150" text="Name" />
+                    <TableColumn fx:id="nationalityColumn" prefWidth="150" text="Nationality" />
+                    <TableColumn fx:id="contactColumn" prefWidth="150" text="Contact" />
+                    <TableColumn fx:id="emergencyContactColumn" prefWidth="180" text="Emergency Contact" />
+                    <TableColumn fx:id="passportColumn" prefWidth="180" text="Passport Number" />
+                </columns>
+            </TableView>
+
+            <!-- Form inputs -->
+            <GridPane hgap="15" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" />
+                    <ColumnConstraints prefWidth="200" />
+                </columnConstraints>
+
+                <Label fx:id="nameLabel" text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label fx:id="nationalityLabel" text="Nationality:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="nationalityField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label fx:id="contactLabel" text="Contact:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="contactField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label fx:id="emergencyContactLabel" text="Emergency Contact:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="emergencyContactField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label fx:id="passportLabel" text="Passport Number:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="passportField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <!-- Buttons -->
+            <HBox alignment="CENTER" spacing="15">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+                <Button fx:id="addButton" styleClass="menu-button" text="Add" />
+                <Button fx:id="updateButton" styleClass="menu-button" text="Update" />
+                <Button fx:id="deleteButton" styleClass="menu-button" text="Delete" />
+                <Button fx:id="clearButton" styleClass="menu-button" text="Clear" />
+            </HBox>
+         <Button fx:id="menuButton" mnemonicParsing="false" onAction="#returnMain" styleClass="return-menu-button" text="Menu" />
+        </VBox>
+    </center>
+</BorderPane>
