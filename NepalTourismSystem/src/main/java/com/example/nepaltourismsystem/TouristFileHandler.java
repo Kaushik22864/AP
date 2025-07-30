@@ -15,7 +15,7 @@ public class TouristFileHandler {
             for (int i = 0; i < tourists.size(); i++) {
                 Tourist t = tourists.get(i);
                 writer.write(String.format(
-                        "  {\"name\":\"%s\", \"nationality\":\"%s\", \"contact\":\"%s\", \"emergencyContact\":\"%s\",\"passportNumber\"}%s\n",
+                        "  {\"name\":\"%s\", \"nationality\":\"%s\", \"contact\":\"%s\", \"emergencyContact\":\"%s\",\"passportNumber\":\"%s\"}%s\n",
                         escape(t.getName()), escape(t.getNationality()),
                         escape(t.getContact()), escape(t.getEmergencyContact()), escape(t.getPassportNumber()),
                         (i < tourists.size() - 1 ? "," : "")
